@@ -1,0 +1,79 @@
+1  Install Skype from Canonical
+
+refpath:  http://www.ubuntugeek.com/how-to-install-skype-in-ubuntu-12-04precise.html
+
+sudo sh -c "echo 'deb http://archive.canonical.com/ubuntu/ trusty partner' >> /etc/apt/sources.list.d/canonical_partner.list"
+
+sudo apt-get update
+
+sudo apt-get install skype
+
+
+
+2 HipChat
+
+refpath:
+https://pesi.hipchat.com/activate/301047/iWJJNz9H
+
+
+https://www.hipchat.com/linux
+
+sudo su
+
+echo "deb http://downloads.hipchat.com/linux/apt stable main" > /etc/apt/sources.list.d/atlassian-hipchat.list
+
+wget -O - https://www.hipchat.com/keys/hipchat-linux.key | apt-key add -
+
+apt-get update
+
+apt-get install hipchat
+
+
+3 virtualbox
+
+refpath:   http://wenku.baidu.com/view/a51ac26c9b6648d7c1c746d7.html
+    
+sudo sh -c'echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" >> /etc/apt/sources.list.d/virtualbox.list'
+    
+wget -q http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc -O- |sudoapt-key add -
+    
+sudo apt-get update
+
+sudo apt-get virtualbox
+
+
+
+4 Rabbitvcs:
+
+refpath:   http://blog.sina.com.cn/s/blog_6827ee370101f3vp.html
+
+sudo add-apt-repository ppa:rabbitvcs/ppa
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 34EF4A35
+
+sudo apt-get update
+
+sudo apt-get install rabbitvcs-cli  rabbitvcs-core rabbitvcs-gedit rabbitvcs-nautilus rabbitvcs-thunar thunarx-python
+
+
+
+5 wine1.7 install
+
+sudo add-apt-repository ppa:ubuntu-wine/ppa
+
+sudo apt-get update
+
+sudo apt-get install wine1.7 winetricks
+
+6 tftpd tftp install:
+sudo apt-get install tftpd tftp openbsd-inetd
+sudo  vi /etc/inetd.conf
+sudo mkdir /tftproot
+sudo chmod 777 /tftproot
+sudo /etc/init.d/openbsd-inetd restart
+
+#test:
+tftp 127.0.0.1
+tftp> get 1.txt
+Received 12 bytes in 0.0 seconds
+tftp> quit
