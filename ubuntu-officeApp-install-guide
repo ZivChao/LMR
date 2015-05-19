@@ -94,3 +94,33 @@ sudo vim /etc/samba/smb.conf
         valid users = newuser
 #end
 
+
+8 serial connection tool ckermit install
+sudo apt-get install ckermit
+vim ~/.mykermrc
+#add follow lines in the file
+#begin
+set line            /dev/ttyS0
+set speed           115200
+set carrier-watch   off
+set handshake       none
+set flow-control    none
+robust
+set file type       bin
+set file name       lit
+set rec pack        1000
+set send pack       1000
+set window          5
+#vivi use xmodem 
+set protocol xmodem 
+#board Linux usually use rz/sz 
+set protocol zmodem 
+#end
+#related cmd
+#connect to device
+c  
+#send file to device
+send filepath
+#log save 
+log session
+#more help info please use man
