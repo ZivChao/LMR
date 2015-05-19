@@ -77,3 +77,20 @@ tftp 127.0.0.1
 tftp> get 1.txt
 Received 12 bytes in 0.0 seconds
 tftp> quit
+
+7 install samba server
+sudo apt-get install smaba
+sudo apt-get install smbfs
+sudo useradd newuser
+sudo smbpasswd -a newuser
+sudo vim /etc/samba/smb.conf
+#add follow line in the end of file
+#begin
+[newuser]
+        comment = Samba Shared
+        browseable = yes 
+        writeable = yes 
+        path = /home/newuser
+        valid users = newuser
+#end
+
