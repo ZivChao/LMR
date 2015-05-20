@@ -1,0 +1,53 @@
+ubuntu 14.04:
+Base vim usage:
+1 :version #show feature-list of vim and version info
+
+
+
+Advance usage of vim:
+1 ctags tools configure
+
+Description:
+Ctags generates an index (or tag) file of language objects found in source files that allows these items to be quickly and easily located by a text editor or other utility. A tag signifies a language object for which an index entry is available (or, alternatively, the index entry created for that object).
+
+Download and configure:
+1)sudo apt-get install ctags
+2)#add follow line in the end of ~/.vimrc(your home vim config file) file
+map <C-F12> :!ctags -R --c-kinds=+p --fields=+iaS --extra=+q .<CR>
+3)#open vim ,press ctl+F12,the tags file which include all file tags  of the current directory
+4)#now you can press ctl+t/] turn back or go to the tags defination 
+5)#man ctags or input help ctags in vim cmd mode get more help infomation of ctags
+
+2 taglist plugin configure:
+
+Description:
+A source code browser plugin for the Vim text editor. Uses exuberant ctags to parse source code files. Supports many programming languages and easily extendable. Can be used in both GUI and terminal versions of Vim.
+
+Download and configure:
+1 )get the taglist file and unzip 
+wget http://sourceforge.net/projects/vim-taglist/files/latest/download?source=typ_redirect
+cp taglist_46.zip  ~/.vim
+unzip taglist_46.zip
+
+2)#add taglist help tags to vim help,then you can input help taglist.txt in vim cmd mode get help info about taglist
+cd doc 
+#input follow vim cmd in vim cmd mode
+helptags .
+
+3)#configure the ~/.vimrc file
+let Tlist_Show_One_File=1  
+let Tlist_Exit_OnlyWindow=1
+
+4)#Using :TlistToggle cmd in vim cmd mode you can turn on or off the taglist window,press ctl+w button you can change the focus of the edit point between taglist window and code window,press Enter button you can jump to the tags on the taglist window definition on the code window
+
+5)#You can get more help info about taglist by input the [help taglist.txt] cmd in the vim cmd mode
+
+3 cscope configure:
+Description:
+Cscope is a developer's tool for browsing source code
+
+1)#Using :version cmd check vim support cscope or not,default support cscope feature
+2)generate the cscope database ,execute [cscope -Rbq] in the code source root dir
+3)configure the ~/.vimrc add following lines
+:cs -h
+
