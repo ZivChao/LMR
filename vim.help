@@ -51,3 +51,8 @@ Cscope is a developer's tool for browsing source code
 3)configure the ~/.vimrc add following lines
 :cs -h
 
+
+4 other plugin for vim 
+Visual Mark : Visual mark, similar to UltraEdit's bookmark http://www.vim.org/scripts/script.php?script_id=1026
+minibufexpl.vim : Elegant buffer explorer - takes very little screen space  http://www.vim.org/scripts/script.php?script_id=159
+winmanager : A windows style IDE for Vim 6.0   http://www.vim.org/scripts/script.php?script_id=95
